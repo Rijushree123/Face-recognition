@@ -1,0 +1,89 @@
+
+
+
+
+
+
+video=cv2.VideoCapture(0)
+check,frame=video.read()
+print(check)
+print(frame)
+time.sleep(4)
+cv2.imshow("Capture",frame)
+cv2.waitKey(0)
+video.release()
+cv2.destroyAllWindows()
+
+
+
+
+
+
+
+
+
+
+
+import cv2,time
+video=cv2.VideoCapture(0)
+a=1
+while True:
+    a=a+1
+    check,frame=video.read()
+    print(frame)
+    gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+    cv2.imshow("Capture",gray)
+    key=cv2.waitKey(1)
+    if key== ord('q'):
+        break
+print(a)
+video.release()
+cv2.destroyAllWindow()
+
+
+
+
+
+
+
+
+
+
+
+
+import cv2,time
+face_cascade=cv2.CascadeClassifier("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Anaconda3 (64-bit)\pic.jpeg")
+img=cv2.imread("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Anaconda3 (64-bit)\pic.jpeg")
+gray_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+faces=face_cascade.detectMultiScale(gray_img, scaleFactor=1.05, minNeighbours=5)
+print(type(faces))
+print(faces)
+for x,y,w,h in faces:
+    img=cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),3)
+cv2.imshow("Gray",img)
+cv2.waitKey(0)
+cv2.destroyAllWindow()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
